@@ -1,0 +1,21 @@
+server:
+    port: 9000
+
+spring:
+  application:
+    name: Zuul
+
+zuul:
+  routes:
+    cep:
+      path: /**
+      serviceId: CONSULTACEP
+      stripPrefix: false
+    create:
+      path: /usuario
+      serviceId: USUARIOCEP
+      stripPrefix: false
+    listar:
+      path: /usuario/**
+      serviceId: USUARIOCEP
+      stripPrefix: false
